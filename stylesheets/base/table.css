@@ -1,0 +1,38 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-spacing: 0;
+  margin-bottom: 20px
+}
+
+*+table {
+  margin-top: 20px
+}
+
+.table {
+  background-color: #fff;
+  color: #363636
+}
+
+table caption {
+  text-align: left;
+}
+
+table td,
+table th {
+  text-align: left;
+  border: 1px solid #dbdbdb;
+  border-width: 0 0 1px;
+  padding: .5em .75em;
+  vertical-align: top
+}
+
+table thead td,
+table thead th {
+  border-width: 0 0 2px;
+}
+
+table tfoot td,
+table tfoot th {
+  border-width: 2px 0 0;
+}

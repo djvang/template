@@ -1,0 +1,28 @@
+.button-primary {
+    --button-color: #fff;
+    --button-background: var(--global-color-primary);
+    --button-color-hover: #fff;
+    --button-background-hover: var(--global-color-primary-hover);
+    --button-color-focus: #fff;
+    --button-background-focus: var(--global-color-primary-hover);
+    --button-color-active: #fff;
+    --button-background-active: var(--global-color-primary-hover);
+}
+
+.button-secondary {
+    --button-color: #fff;
+    --button-background: var(--global-color-secondary);
+    --button-color-hover: #fff;
+    --button-background-hover: var(--global-color-secondary-hover);
+    --button-color-focus: #fff;
+    --button-background-focus: var(--global-color-secondary-hover);
+    --button-color-active: #fff;
+    --button-background-active: var(--global-color-secondary-hover);
+}
+
+.button-small {
+    --button-font-size: 12px;
+    --button-font-weight: normal;
+    --button-padding: 4px 12px;
+    --button-height: 30px;
+}

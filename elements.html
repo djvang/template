@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <title>Elements</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+
+            <h1>Elements</h1>
+            <p>Все элементы можно применять глобально либо в привязывать его к определенному контексту, например глобально:</p>
+            <ul>
+                <li>.title</li>
+                <li>.image</li>
+                <li>.content</li>
+            </ul>
+            <p>или к контексту. Это может быть компонент или раскладка, например:</p>
+            <ul>
+                <li>.section-title</li>
+                <li>.card-title</li>
+                <li>.hero-image</li>
+                <li>.card-image</li>
+                <li>.article-content</li>
+            </ul>
+            <p>Важно учитывать при создании элемента то, что это может быть любой строчный или блочный элемент. Не забывать
+                учитывать заданные браузером стилизации элементов.</p>
+            <hr>
+
+            <section>
+                <h2>Семантические элементы</h2>
+                <p>Элементы могут упралять элементами только селектором по тегу</p>
+
+
+                <div>
+                    <h3>Title</h3>
+
+                    <pre><code class="html">&lt;!-- Глобально --&gt;
+&lt;h1 class="title"&gt;&lt;/h1&gt; 
+
+&lt;!-- Контекст --&gt; 
+&lt;h2 class="*-title"&gt;&lt;/h2&gt;</code></pre>
+
+
+                </div>
+
+                <div>
+                    <h3>Subtitle</h3>
+
+                    <pre><code class="html">&lt;!-- Глобально --&gt;
+&lt;h3 class="subtitle"&gt;&lt;/h3&gt; 
+
+&lt;!-- Контекст --&gt; 
+&lt;h3 class="*-subtitle"&gt;&lt;/h3&gt;</code></pre>
+
+
+                </div>
+
+                <div>
+                    <h3>Content</h3>
+
+                    <pre><code class="html">&lt;!-- Глобально --&gt;
+&lt;div class="content"&gt;&lt;/div&gt; 
+
+&lt;!-- Контекст --&gt; 
+&lt;div class="*-content"&gt;&lt;/div&gt;</code></pre>
+
+
+                </div>
+
+                <div>
+                    <h3>Description</h3>
+
+                    <pre><code class="html">&lt;!-- Глобально --&gt;
+&lt;div class="description"&gt;&lt;/div&gt; 
+
+&lt;!-- Контекст --&gt; 
+&lt;div class="*-description"&gt;&lt;/div&gt;</code></pre>
+
+
+                </div>
+
+                <div>
+                    <h3>Image</h3>
+
+                    <pre><code class="html">&lt;!-- Глобально --&gt;
+&lt;div class="image"&gt;&lt;/div&gt; 
+
+&lt;!-- Контекст --&gt; 
+&lt;div class="*-image"&gt;&lt;/div&gt;</code></pre>
+
+
+                </div>
+
+                <div>
+                        <h3>Link</h3>
+    
+                        <pre><code class="html">&lt;!-- Глобально --&gt;
+    &lt;div class="link"&gt;&lt;/div&gt; 
+    
+    &lt;!-- Контекст --&gt; 
+    &lt;div class="*-link"&gt;&lt;/div&gt;</code></pre>
+    
+    
+                    </div>
+
+                <div>
+                    <h3>Icon</h3>
+
+                    <pre><code class="html">&lt;!-- Глобально --&gt;
+&lt;span class="icon"&gt;&lt;/span&gt; 
+
+&lt;!-- Контекст --&gt; 
+&lt;span class="*-icon"&gt;&lt;/span&gt;</code></pre>
+
+
+                </div>
+
+                <div>
+                    <h3>Tag</h3>
+
+                    <pre><code class="html">&lt;!-- Глобально --&gt;
+&lt;span class="tag"&gt;&lt;/span&gt; 
+&lt;a href="#" class="tag"&gt;&lt;/a&gt; 
+
+&lt;!-- Контекст --&gt; 
+&lt;span class="*-tag"&gt;&lt;/span&gt;
+&lt;a href="#" class="*-tag"&gt;&lt;/a&gt;</code></pre>
+
+
+                </div>
+
+                <div>
+                    <h3>Category</h3>
+
+                    <pre><code class="html">&lt;!-- Глобально --&gt;
+&lt;span class="category"&gt;&lt;/span&gt; 
+&lt;a href="#" class="category"&gt;&lt;/a&gt; 
+
+&lt;!-- Контекст --&gt; 
+&lt;span class="*-category"&gt;&lt;/span&gt;
+&lt;a href="#" class="*-category"&gt;&lt;/a&gt;</code></pre>
+
+
+                </div>
+
+                <div>
+                    <h3>Meta</h3>
+
+                    <pre><code class="html">&lt;!-- Глобально --&gt;
+&lt;div class="meta"&gt;&lt;/div&gt; 
+
+&lt;!-- Контекст --&gt; 
+&lt;div class="*-meta"&gt;&lt;/div&gt;</code></pre>
+
+
+                </div>
+
+            </section>
+
+            <section>
+                <h2>Структурные элементы</h2>
+                <p>Элементы, они же в контексте - могут упралять внутренними элементами селектором по классу. Например, для
+                    выстраивания в ряд внутренних элементов или в колонку или в любую другую раскладку.</p>
+
+                <div>
+                    <h3>Background</h3>
+                    <pre><code class="html">&lt;!-- Контекст --&gt; 
+&lt;div class="*-background"&gt;&lt;/div&gt;</code></pre>
+
+                </div>
+                <div>
+                    <h3>Foreground</h3>
+
+                    <pre><code class="html">&lt;!-- Контекст --&gt; 
+&lt;div class="*-foreground"&gt;&lt;/div&gt;</code></pre>
+
+                </div>
+                <div>
+                    <h3>Overlay</h3>
+
+                    <pre><code class="html">&lt;!-- Контекст --&gt; 
+&lt;div class="*-overlay"&gt;&lt;/div&gt;</code></pre>
+
+                </div>
+                <div>
+                    <h3>Item</h3>
+
+                    <pre><code class="html">&lt;!-- Контекст --&gt; 
+&lt;div class="*-item"&gt;&lt;/div&gt;</code></pre>
+
+                </div>
+                <div>
+                    <h3>Top|Right|Bottom|Left</h3>
+
+                    <pre><code class="html">&lt;!-- Контекст --&gt; 
+&lt;div class="*-top"&gt;&lt;/div&gt;
+&lt;div class="*-right"&gt;&lt;/div&gt;
+&lt;div class="*-bottom"&gt;&lt;/div&gt;
+&lt;div class="*-left"&gt;&lt;/div&gt;</code></pre>
+
+                </div>
+                <div>
+                    <h3>Header|Body|Footer</h3>
+
+                    <pre><code class="html">&lt;!-- Контекст --&gt;  
+&lt;div class="*-header"&gt;&lt;/div&gt;
+&lt;div class="*-body"&gt;&lt;/div&gt;
+&lt;div class="*-footer"&gt;&lt;/div&gt;</code></pre>
+
+                </div>
+            </section>
+
+
+
+            <section>
+                <h2>Разные элементы</h2>
+
+                <div>
+                    <h3>Loader</h3>
+
+                    <pre><code class="html">&lt;!-- Глобально --&gt;
+&lt;div class="loader"&gt;&lt;/div&gt; 
+
+&lt;!-- Контекст --&gt; 
+&lt;div class="*-loader"&gt;&lt;/div&gt;</code></pre>
+
+
+                </div>
+                <div>
+                    <h3>Close</h3>
+
+                    <pre><code class="html">&lt;!-- Глобально --&gt;
+&lt;span class="close"&gt;&lt;/span&gt; 
+&lt;a href="#" class="close"&gt;&lt;/a&gt; 
+
+&lt;!-- Контекст --&gt; 
+&lt;span class="*-close"&gt;&lt;/span&gt;
+&lt;a href="#" class="*-close"&gt;&lt;/a&gt;</code></pre>
+
+
+                </div>
+            </section>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
