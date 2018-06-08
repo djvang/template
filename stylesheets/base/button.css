@@ -1,22 +1,26 @@
 :root {
   --button-color: #222;
-  --button-background: #fff;
+  --button-background: #f5f5f5;
   --button-font-family: inherit;
-  --button-font-size: 14px;
+  --button-font-size: var(--global-font-size);
   --button-font-weight: normal;
   --button-padding: 6px 14px;
-  --button-height: 38px;
+  --button-height: var(--global-control-height);
 
   --button-color-hover: #222;
-  --button-background-hover: #fff;
+  --button-background-hover: #ececec;
 
   --button-color-focus: #222;
-  --button-background-focus: #fff;
+  --button-background-focus: #ececec;
 
   --button-color-active: #222;
-  --button-background-active: #fff;
+  --button-background-active: #ececec;
 }
 
+
+button,
+input[type="button"],
+input[type="submit"],
 .button {
   margin: 0;
   position: relative;
@@ -34,7 +38,7 @@
   padding: var(--button-padding);
   font-family: var(--button-font-family);
   font-size: var(--button-font-size);
-  min-height: var(--button-heigth);
+  min-height: var(--button-height);
   text-decoration: none;
   background: var(--button-background);
   color: var(--button-color);
@@ -69,5 +73,5 @@
 
 .button:disabled {
   pointer-events: none;
-  opacity: .45;
+  opacity: 0.45;
 }
