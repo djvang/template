@@ -1,0 +1,37 @@
+.section {
+  position: relative;
+  .hook-section();
+}
+
+.section-overlay,
+.section-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.section-overlay {
+  .hook-section-overlay();
+}
+
+.section-background {
+  .hook-section-background();
+}
+
+.section-foreground {
+  position: relative;
+  min-height: inherit;
+  .hook-section-foreground();
+}
+
+.hook-section-misc();
+
+//=========== Hooks
+
+.hook-section() {}
+.hook-section-overlay() {}
+.hook-section-background() {}
+.hook-section-foreground() {}
+.hook-section-misc() {}

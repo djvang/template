@@ -1,0 +1,37 @@
+.hero {
+  position: relative;
+  .hook-hero();
+}
+
+.hero-overlay,
+.hero-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hero-overlay {
+  .hook-hero-overlay();
+}
+
+.hero-background {
+  .hook-hero-background();
+}
+
+.hero-foreground {
+  position: relative;
+  min-height: inherit;
+  .hook-hero-foreground();
+}
+
+.hook-hero-misc();
+
+//=========== Hooks
+
+.hook-hero() {}
+.hook-hero-overlay() {}
+.hook-hero-background() {}
+.hook-hero-foreground() {}
+.hook-hero-misc() {}

@@ -8,6 +8,7 @@
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  .hook-icon()
 }
 
 svg {
@@ -23,4 +24,13 @@ svg[class*=" icon-"] {
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
+  .hook-icon-svg()
 }
+
+.hook-icon-misc();
+
+//=========== Hooks
+
+.hook-icon() {}
+.hook-icon-svg() {}
+.hook-icon-misc() {};

@@ -1,0 +1,91 @@
+@button-color: #222;
+@button-background: #f5f5f5;
+@button-font-family: inherit;
+@button-font-size: @global-font-size;
+@button-font-weight: normal;
+@button-padding: 6px 14px;
+@button-height: @global-control-height;
+
+@button-color-hover: #222;
+@button-background-hover: #ececec;
+
+@button-color-focus: #222;
+@button-background-focus: #ececec;
+
+@button-color-active: #222;
+@button-background-active: #ececec;
+
+
+button,
+input[type="button"],
+input[type="submit"],
+.button {
+  margin: 0;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  user-select: none;
+  border-radius: 0;
+  overflow: visible;
+  font: inherit;
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: @button-padding;
+  font-family: @button-font-family;
+  font-size: @button-font-size;
+  min-height: @button-height;
+  text-decoration: none;
+  background: @button-background;
+  color: @button-color;
+  .hook-button();
+}
+
+.button:not(:disabled) {
+  cursor: pointer
+}
+
+.button::-moz-focus-inner {
+  border: 0;
+  padding: 0
+}
+
+.button:hover {
+  text-decoration: none;
+  background: @button-background-hover;
+  color: @button-color-hover;
+  .hook-button-hover();
+}
+
+.button:focus {
+  outline: none;
+  background: @button-background-focus;
+  color: @button-color-focus;
+  .hook-button-focus();
+}
+
+.button:active,
+.button.is-active {
+  background: @button-background-active;
+  color: @button-color-active;
+  .hook-button-active();
+}
+
+.button:disabled {
+  pointer-events: none;
+  opacity: 0.45;
+  .hook-button-disabled();
+}
+
+.hook-button-misc();
+
+//=========== Hooks
+
+.hook-button() {}
+.hook-button-hover() {}
+.hook-button-focus() {}
+.hook-button-active() {}
+.hook-button-disabled() {}
+.hook-button-misc() {}
