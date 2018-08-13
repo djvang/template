@@ -1,0 +1,58 @@
+
+@table-color:                                   @global-color;
+@table-background:                              @global-background;
+
+@table-margin-vertical:                         @global-margin;
+
+@table-cell-padding:                            16px;
+
+@table-divider-border-width:                    @global-border-width;
+@table-divider-border:                          @global-border-width solid @global-border;
+
+@table-expand-min-width:                        150px;
+
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-spacing: 0;
+  margin-bottom: @table-margin-vertical;
+  background: @table-background;
+  color: @table-color;
+  .hook-table();
+}
+
+* + table {
+  margin-top: @table-margin-vertical
+}
+
+table caption {
+  text-align: left;
+}
+
+table td,
+table th {
+  text-align: left;
+  border: @table-divider-border;
+  border-width: 0 0 @table-divider-border-width;
+  padding: @table-cell-padding;
+  vertical-align: top;
+  .hook-table-cell();
+}
+
+.table-shrink {
+  width: 1px;
+}
+
+.table-expand {
+  min-width: @table-expand-min-width;
+}
+
+.hook-table-misc();
+
+//=========== Hooks
+
+.hook-table() {}
+.hook-table-cell() {}
+.hook-table-misc() {}

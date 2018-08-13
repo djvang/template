@@ -1,0 +1,475 @@
+
+@form-height:                                   @global-control-height;
+@form-line-height:                              1.4;
+@form-padding:                                  6px 14px;
+
+@form-background:                               #f5f5f5;
+@form-color:                                    @global-color;
+
+@form-focus-background:                         #e7e6e6;
+@form-focus-color:                              @global-color;
+
+@form-disabled-background:                      #e7e6e6;
+@form-disabled-color:                           @global-muted-color;
+
+@form-placeholder-color:                        @global-muted-color;
+
+@form-invalid-color:                            @global-danger-background;
+@form-valid-color:                              @global-success-background;
+
+@form-select-padding-right:                     20px;
+@form-select-option-color:                      #444;
+
+@form-radio-size:                               16px;
+@form-radio-margin-top:                         -4px;
+@form-radio-background:                         #f5f5f5;
+
+@form-radio-checked-background:                 #ececec;
+
+@form-radio-checked-focus-background:           #ececec;
+
+@form-radio-disabled-background:                #ececec;
+
+@form-legend-font-size:                         @global-font-size;
+@form-legend-line-height:                       1.4;
+
+@form-control-margin-bottom:                    @global-margin;
+
+@form-icon-width:                               @form-height;
+@form-icon-font-size:                           @global-font-size;
+@form-icon-color:                               @global-muted-color;
+@form-icon-hover-color:                         @global-color;
+
+@form-range-thumb-height:                       15px;
+@form-range-thumb-border-radius:                500px;
+@form-range-thumb-background:                   @global-color;
+
+@form-range-track-height:                       3px;
+@form-range-track-background:                   @global-muted-background;
+@form-range-track-focus-background:             @global-muted-background;
+
+@internal-form-select-image:                    url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" fill="black"><path d="M12 1l-3 5h6z"></path><path d="M12 13l-3-5h6z"></path></svg>');
+@internal-form-radio-image:                     url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="black"><path d="M10 8c0 1.105-0.895 2-2 2s-2-0.895-2-2c0-1.105 0.895-2 2-2s2 0.895 2 2z"></path></svg>');
+@internal-form-checkbox-image:                  url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16" stroke="black"><path fill="none" stroke="inherit" stroke-width="1.8824" stroke-miterlimit="50" stroke-linecap="butt" stroke-linejoin="miter" d="M20.028 2.353l-12.028 12.028-6.381-6.381"></path></svg>');
+@internal-form-checkbox-indeterminate-image:    url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="black"><path d="M3 8h10v1h-10v-1z"></path></svg>');
+
+
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="radio"]:not(:disabled),
+[type="checkbox"]:not(:disabled) {
+  cursor: pointer;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: .5rem;
+  font-size: @form-legend-font-size;
+  line-height: @form-legend-line-height;
+  color: inherit;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+output {
+  display: inline-block;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+::-webkit-datetime-edit,
+::-webkit-inner-spin-button {
+  height: auto;
+}
+
+input:not([type]),
+input[type=date],
+input[type=datetime-local],
+input[type=email],
+input[type=file],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type="month"],
+input[type=week],
+input[type=text],
+input[type=time],
+input[type=url],
+textarea,
+select {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: @form-padding;
+  min-height: @form-height;
+  background: @form-background;
+  border: none;
+  color: @form-color;
+  box-shadow: 0 0 0 0 transparent inset;
+  border-radius: 0;
+  .hook-form();
+}
+
+::placeholder {
+  color: @form-placeholder-color;
+  opacity: 1;
+  .hook-form-placeholder();
+}
+
+input:not([type]):focus,
+input[type=date]:focus,
+input[type=datetime-local]:focus,
+input[type=email]:focus,
+input[type=file]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type="month"]:focus,
+input[type=week]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+textarea:focus,
+select:focus {
+  background: @form-focus-background;
+  color: @form-focus-color;
+  .hook-form-focus();
+}
+
+input:not([type])[disabled],
+input[type=date][disabled],
+input[type=datetime-local][disabled],
+input[type=email][disabled],
+input[type=file][disabled],
+input[type=number][disabled],
+input[type=password][disabled],
+input[type=search][disabled],
+input[type=tel][disabled],
+input[type="month"][disabled],
+input[type=week][disabled],
+input[type=text][disabled],
+input[type=time][disabled],
+input[type=url][disabled],
+textarea:disabled,
+select:disabled {
+  pointer-events: none;
+  opacity: .45;
+  background: @form-disabled-background;
+  color: @form-disabled-color;
+  .hook-form-disabled();
+}
+
+select:not([multiple]):not([size]) {
+  padding-right: @form-select-padding-right;
+  background-image: @internal-form-select-image;
+  background-repeat: no-repeat;
+  background-position: 100% 50%
+}
+
+select:not([multiple]):not([size])::-ms-expand {
+  display: none
+}
+
+select:not([multiple]):not([size]) option {
+  color: @form-select-option-color
+}
+
+select:not([multiple]):not([size]):disabled { 
+  background-image: @internal-form-select-image;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  border: none;
+  display: inline-block;
+  height: @form-radio-size;
+  width: @form-radio-size;
+  overflow: hidden;
+  margin-top: @form-radio-margin-top;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: @form-radio-background;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: 50% 50%;
+  .hook-radio();
+}
+
+input[type="radio"] {
+  border-radius: 50%
+}
+
+input[type="radio"]:checked {
+  background-image: @internal-form-radio-image;
+}
+
+input[type="checkbox"]:checked {
+  background-image: @internal-form-checkbox-image;
+}
+
+input[type="checkbox"]:indeterminate {
+  background-image: @internal-form-radio-image;
+}
+
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: none;
+  .hook-radio-focus();
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked,
+input[type="checkbox"]:indeterminate {
+  background-color: @form-radio-checked-background;
+  .hook-radio-checked();
+}
+
+input[type="radio"]:checked:focus,
+.uk-checkbox:checked:focus,
+.uk-checkbox:indeterminate:focus {
+  background-color: @form-radio-checked-focus-background;
+  .hook-radio-checked-focus();
+}
+
+input[type="radio"]:disabled:checked {
+  background-image: @internal-form-radio-image;
+}
+
+input[type="checkbox"]:disabled:checked {
+  background-image: @internal-form-checkbox-image;
+}
+
+input[type="checkbox"]:disabled:indeterminate {
+  background-image: @internal-form-checkbox-indeterminate-image;
+}
+
+input[type="radio"]:disabled,
+input[type="checkbox"]:disabled {
+  background-color: @form-radio-disabled-background;
+  .hook-radio-disabled();
+}
+
+input[type="range"] {
+  box-sizing: border-box;
+  margin: 0;
+  vertical-align: middle;
+  max-width: 100%;
+  width: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  padding: 0;
+  .hook-range();
+}
+
+input[type="range"]:focus { outline: none; }
+input[type="range"]::-moz-focus-outer { border: none; }
+
+input[type="range"]::-ms-track {
+  height: @form-range-thumb-height;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type="range"]:not(:disabled)::-webkit-slider-thumb { cursor: pointer; }
+input[type="range"]:not(:disabled)::-moz-range-thumb { cursor: pointer; }
+input[type="range"]:not(:disabled)::-ms-thumb { cursor: pointer; }
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: calc((@form-range-thumb-height) / 2 * -1);
+  height: @form-range-thumb-height;
+  width: @form-range-thumb-height;
+  border-radius: @form-range-thumb-border-radius;
+  background: @form-range-thumb-background;
+}
+
+input[type="range"]::-moz-range-thumb {
+  border: none;
+  height: @form-range-thumb-height;
+  width: @form-range-thumb-height;
+  border-radius: @form-range-thumb-border-radius;
+  background: @form-range-thumb-background;
+}
+
+input[type="range"]::-ms-thumb {
+  margin-top: 0;
+}
+
+input[type="range"]::-ms-thumb {
+  border: none;
+  height: @form-range-thumb-height;
+  width: @form-range-thumb-height;
+  border-radius: @form-range-thumb-border-radius;
+  background: @form-range-thumb-background;
+}
+
+input[type="range"]::-ms-tooltip { display: none; }
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: @form-range-track-height;
+  background: @form-range-track-background;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track,
+input[type="range"]:active::-webkit-slider-runnable-track {
+  background: @form-range-track-focus-background;
+}
+
+input[type="range"]::-moz-range-track {
+  height: @form-range-track-height;
+  background: @form-range-track-background;
+}
+
+input[type="range"]:focus::-moz-range-track {
+  background: @form-range-track-focus-background;
+}
+
+input[type="range"]::-ms-fill-lower,
+input[type="range"]::-ms-fill-upper {
+  height: @form-range-track-height;
+  background: @form-range-track-background;
+}
+
+input[type="range"]:focus::-ms-fill-lower,
+input[type="range"]:focus::-ms-fill-upper {
+  background: @form-range-track-focus-background;
+}
+
+label.is-invalid {
+  color: @form-invalid-color;
+  .hook-form-label-invalid();
+}
+
+label.is-valid {
+  color: @form-valid-color;
+  .hook-form-label-valid();
+}
+
+input.is-invalid,
+input.is-invalid:focus {
+  color: @form-invalid-color;
+  border-color: @form-invalid-color;
+  .hook-form-invalid();
+}
+
+input.is-valid,
+input.is-valid:focus {
+  color: @form-valid-color;
+  border-color: @form-valid-color;
+  .hook-form-valid();
+}
+
+.form-control {
+  margin-bottom: @form-control-margin-bottom;
+  .hook-form-control();
+}
+
+.form-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: @form-icon-width;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: @form-icon-color;
+  .hook-form-icon();
+}
+
+.form-icon:hover { color: @form-icon-hover-color; }
+
+.form-icon:not(a):not(button):not(input) { pointer-events: none; }
+
+.form-icon:not(.form-icon-flip) ~ input { padding-left: @form-icon-width !important; }
+
+.form-icon-flip {
+  right: 0;
+  left: auto;
+}
+
+.form-icon-flip ~ input { padding-right: @form-icon-width !important; }
+
+
+
+.hook-form-misc();
+
+//=========== Hooks
+
+.hook-form() {}
+.hook-form-hover() {}
+.hook-form-focus() {}
+.hook-form-disabled() {}
+.hook-form-placeholder() {};
+.hook-form-focus() {};
+.hook-form-disabled() {};
+.hook-radio() {};
+.hook-radio-focus() {};
+.hook-radio-checked() {};
+.hook-radio-checked-focus() {};
+.hook-radio-disabled() {};
+.hook-range() {};
+.hook-form-invalid() {};
+.hook-form-valid() {};
+.hook-form-label-invalid() {};
+.hook-form-label-valid() {};
+.hook-form-control() {};
+.hook-form-icon() {};
+
+.hook-form-misc() {}
